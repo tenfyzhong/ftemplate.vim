@@ -1,7 +1,12 @@
 let s:template_dir = expand('<sfile>:p:h:h') . '/templates/'
 
-function! ftemplate#insert(ft)
-  let lines = <SID>get_template(a:ft)
+function! ftemplate#insert(...)
+  if a:0 > 0
+    let ft=a:1
+  else
+    let ft=&ft
+  endif
+  let lines = <SID>get_template(ft)
   if len(lines) == 0 
     return
   endif

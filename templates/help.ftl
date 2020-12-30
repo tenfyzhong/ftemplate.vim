@@ -1,4 +1,4 @@
-*`!v expand('%:p:h:h:t:r')`* *`!v expand('%:p:h:h:t')`* author: {AUTHOR} email: {EMAIL}
+*`!v expand('%:p:h:h:t')`* *`!v expand('%:p:t')`* *`!v expand('%:p:t:r')`* author: {AUTHOR} email: {EMAIL}
 
 ================================================================================
 Contents:

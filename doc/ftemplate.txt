@@ -1,0 +1,73 @@
+*ftemplate* *ftemplate.vim* author: tenfyzhong email: tenfy@tenfy.cn
+
+================================================================================
+Contents:
+1. Introduction -------------------------------- |ftemplate-introduction|
+2. Install ------------------------------------- |ftemplate-install|
+3. Usage --------------------------------------- |ftemplate-usage|
+4. Command ------------------------------------- |ftemplate-command|
+5. Options ------------------------------------- |ftemplate-options|
+6. Template ------------------------------------ |ftemplate-template|
+7. LICENSE ------------------------------------- |ftemplate-license|
+
+================================================================================
+1. Introduction                                  *ftemplate-introduction*
+Generate content with template when open a new file.
+
+You can define you owner templates base on filetype. The plugin will copy the
+template and then replace the macro (define by `{MACRO}}`) or output of commands 
+(defined by '``').
+
+================================================================================
+2. Install                                       *ftemplate-install*
+- [vim-plug](https://github.com/junegunn/vim-plug)
+  Plug 'tenfyzhong/CompleteParameter.vim'
+ 
+- Manual >
+  git clone https://github.com/tenfyzhong/ftemplate.vim.git ~/.vim/bundle/ftemplate.vim
+  echo 'set rtp+=~/.vim/bundle/ftemplate.vim' >> ~/.vimrc
+  vim -c 'helptag ~/.vim/bundle/ftemplate.vim/doc' -c qa!
+<
+
+================================================================================
+3. Usage                                         *ftemplate-usage*
+The plugin will run when open a new file automatically. You can run the command
+|Ftemplate| manually. 
+
+================================================================================
+4. Command                                       *ftemplate-command*
+4.1 *Ftemplate*
+Generate content base on filetype.
+
+
+================================================================================
+5. Options                                       *ftemplate-options*
+5.1 *g:ftemplate_local_templates*
+This plugin has some templates in the `templates` directory. You can define your
+owner template, and put it in a directory. Set this option to the directory.
+The plugin will use you owner template first.
+
+================================================================================
+6. Template                                      *ftemplate-template*
+Template is a text file with any contents. The file name of template consist of 
+filetype and `.ftl` suffix. When create a new file, it will get content of the 
+template named `filetype.ftl` to the new file. 
+
+A template has normal text, {MACRO} and `command`. 
+
+The normal text will simply copied. 
+
+MACRO surround with `{}`. It will the environment varible and replace the
+`MACRO`. A environment has prefix `FT_VIM_`. For example, a macro `{AUTHOR}`, 
+the environment should be `export FT_VIM_AUTHOR=tenfyzhong`. 
+
+`command` surround with '``'. If the command has prefix `!v `, it will use vim 
+to run the command, otherwise it will use shell to run the command. And then
+replace the '`command`' with the output of then command.
+
+
+================================================================================
+7. LICENSE                                       *ftemplate-license*
+MIT License  Copyright (c) 2020 tenfy
+
+" vim:ft=help:iskeyword+=-:iskeyword+=58:iskeyword+=#

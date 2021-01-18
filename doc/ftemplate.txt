@@ -21,7 +21,7 @@ template and then replace the macro (define by `{MACRO}}`) or output of commands
 ================================================================================
 2. Install                                       *ftemplate-install*
 - [vim-plug](https://github.com/junegunn/vim-plug)
-  Plug 'tenfyzhong/CompleteParameter.vim'
+  Plug 'tenfyzhong/ftemplate.vim'
  
 - Manual >
   git clone https://github.com/tenfyzhong/ftemplate.vim.git ~/.vim/bundle/ftemplate.vim

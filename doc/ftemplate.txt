@@ -45,7 +45,11 @@ Generate content base on filetype.
 5.1 *g:ftemplate_local_templates*
 This plugin has some templates in the `templates` directory. You can define your
 owner template, and put it in a directory. Set this option to the directory.
-The plugin will use you owner template first.
+The plugin will use local template first.
+
+5.2 *g:ftemplate_ignore_ft*
+default: `[]`
+A string list, filetype to ignore
 
 ================================================================================
 6. Template                                      *ftemplate-template*
